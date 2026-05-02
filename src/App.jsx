@@ -344,7 +344,96 @@ const QUESTIONS = {
     ["Qu'est-ce que «la fontaine qui nous regarde tout en larmes» illustre dans la 1re tirade (EL1) ?",["La fontaine déborde à cause de la pluie récente","La nature personnifiée et hypersensible, en contraste avec l'insensibilité de Camille à leur enfance commune","La tristesse de Perdican qui se projette dans la nature","Un symbole de pureté et de fidélité"],0],
   ],
 };
+const BIOS = {
+  sq1: [
+    {
+      name: "Victor Hugo",
+      bio: [
+        "1802-1885, figure centrale du romantisme français et immense poète, romancier et dramaturge",
+        "Chef de file du mouvement romantique avec Hernani (1830), qui rompt avec les règles classiques",
+        "Œuvres majeures : Les Contemplations (poésie intime), Les Misérables (roman social), Notre-Dame de Paris",
+        "Engagement politique fort : député, opposant à Napoléon III, exilé de 1851 à 1870 (Jersey, Guernesey)",
+        "Sa poésie mêle lyrisme personnel (deuil de sa fille Léopoldine) et réflexion sur Dieu, la mort et le temps",
+        "Dans «Demain, dès l’aube», il exprime un deuil absolu, silencieux et sacré"
+      ]
+    },
+    {
+      name: "Hélène Dorion",
+      bio: [
+        "Née en 1958 au Québec, poétesse contemporaine majeure",
+        "Première femme vivante et première autrice québécoise au programme du bac français",
+        "Son œuvre explore la relation entre nature, mémoire, temps et intériorité",
+        "Mes forêts (2021) a été écrit dans le contexte du confinement lié au Covid-19",
+        "Son écriture est très moderne : vers libres, absence de ponctuation, images métaphoriques",
+        "Elle conçoit la forêt comme un espace symbolique : mémoire, corps, temps et vivant entremêlés"
+      ]
+    }
+  ],
 
+  sq2: [
+    {
+      name: "Abbé Prévost",
+      bio: [
+        "1697-1763, écrivain du XVIIIe siècle et religieux instable (entrées et sorties du clergé)",
+        "Auteur de Manon Lescaut (1731), roman majeur du préromantisme",
+        "Il s’intéresse aux passions humaines : amour, désir, addiction, fatalité",
+        "Structure originale du roman : récit enchâssé (Renoncour raconte Des Grieux)",
+        "Manon Lescaut explore la tension entre amour absolu et déchéance morale",
+        "Vision pessimiste : l’amour est irrésistible mais conduit à la perte"
+      ]
+    },
+    {
+      name: "Victor Hugo",
+      bio: [
+        "Auteur de Notre-Dame de Paris (1831), roman historique du romantisme",
+        "Défend la préservation du patrimoine architectural médiéval",
+        "Oppose les marginaux (Quasimodo, Esméralda) à la société injuste",
+        "Écriture romantique : exaltation des sentiments et des contrastes extrêmes",
+        "Quasimodo devient symbole de la beauté morale contre la laideur physique",
+        "Hugo mêle récit, réflexion sociale et dimension philosophique"
+      ]
+    }
+  ],
+
+  sq3: [
+    {
+      name: "La Boétie",
+      bio: [
+        "1530-1563, humaniste de la Renaissance, ami proche de Montaigne",
+        "Auteur du Discours de la servitude volontaire écrit vers 18 ans",
+        "Texte philosophique majeur sur la question de la liberté et de l’obéissance",
+        "Thèse centrale : le pouvoir du tyran existe uniquement grâce au consentement du peuple",
+        "Influencé par les auteurs antiques (Platon, Aristote) et la pensée humaniste",
+        "Texte récupéré plus tard par les mouvements politiques révolutionnaires et libertaires"
+      ]
+    },
+    {
+      name: "Alfred de Musset",
+      bio: [
+        "1810-1857, poète et dramaturge romantique du XIXe siècle",
+        "Représentant du « mal du siècle » : désillusion des jeunes après la Révolution et l’Empire",
+        "Liaison célèbre avec George Sand, marquée par passion et rupture",
+        "Œuvres majeures : Lorenzaccio, On ne badine pas avec l’amour",
+        "Son théâtre explore les contradictions entre amour, cynisme et idéal",
+        "Écriture marquée par le doute, la douleur amoureuse et la lucidité sur l’humain"
+      ]
+    }
+  ],
+
+  sq4: [
+    {
+      name: "Alfred de Musset",
+      bio: [
+        "Auteur de On ne badine pas avec l’amour (1834), pièce du théâtre romantique",
+        "Refuse les règles classiques du théâtre au profit d’une expression libre des sentiments",
+        "Thème central : impossibilité de concilier amour sincère et orgueil humain",
+        "Opposition entre amour idéalisé (Camille) et amour vécu (Perdican)",
+        "Critique de l’éducation religieuse et de l’hypocrisie morale",
+        "Fin tragique : Rosette meurt, conséquence des manipulations sentimentales"
+      ]
+    }
+  ]
+};
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -467,6 +556,9 @@ export default function App() {
       <div style={S.tabs}>
         <button onClick={() => setMode("fiches")} style={S.tab(mode==="fiches")}>Fiches de révision</button>
         <button onClick={startQuiz} style={S.tab(mode==="quiz")}>Quiz ({QUESTIONS[theme.id].length} questions)</button>
+        <button onClick={() => setMode("bios")} style={S.tab(mode==="bios")}>
+        Biographies
+        </button>
       </div>
 
       {mode === "fiches" && (
@@ -489,6 +581,37 @@ export default function App() {
           ))}
         </div>
       )}
+        {mode === "bios" && (
+  <div>
+    <p style={{ fontSize: 13, color: "var(--color-text-secondary)", margin: "0 0 16px" }}>
+      Les auteurs à connaître pour cette séquence.
+    </p>
+
+      {BIOS[theme.id].map((a, i) => (
+        <div key={i} style={S.card}>
+          <button
+            style={S.cardBtn}
+            onClick={() => setOpen(o => ({ ...o, ["bio"+i]: !o["bio"+i] }))}
+          >
+            <span>{a.name}</span>
+            <span style={{ color: theme.c, fontSize: 20 }}>
+              {open["bio"+i] ? "−" : "+"}
+            </span>
+          </button>
+
+          {open["bio"+i] && (
+            <div style={{ padding: "0 16px 16px" }}>
+              <ul style={{ margin: 0, padding: "0 0 0 18px" }}>
+                {a.bio.map((b, bi) => (
+                  <li key={bi} style={S.li}>{b}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )}
 
       {mode === "quiz" && questions && !done && (
         <div>
@@ -502,6 +625,7 @@ export default function App() {
               {questions[qi][0]}
             </p>
           </div>
+
           <div>
             {questions[qi][1].map((opt, oi) => (
               <button key={oi} onClick={() => handleSelect(oi)} style={S.optBtn(oi, sel, questions[qi][2])}>
