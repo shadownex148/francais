@@ -5,7 +5,7 @@ const THEMES = [
   { id:"sq1", n:"Poésie · Nature · Intime", sub:"Hugo · Dorion ×3", c:"#1D9E75", bg:"#EAF3DE" },
   { id:"sq2", n:"Personnages en marge", sub:"Manon Lescaut ×3 · Quasimodo", c:"#BA7517", bg:"#FAEEDA" },
   { id:"sq3", n:"Défendre la liberté", sub:"La Boétie ×3 · Lorenzaccio", c:"#993C1D", bg:"#FAECE7" },
-  { id:"sq4", n:"Jeux du cœur & parole", sub:"On ne badine pas ×2", c:"#534AB7", bg:"#EEEDFE" },
+  { id:"sq4", n:"Jeux du cœur & parole", sub:"On ne badine pas ×3", c:"#534AB7", bg:"#EEEDFE" },
 ];
 
 const FICHES = {
@@ -230,6 +230,35 @@ const FICHES = {
       "Rosette : «je vous aimerai comme je pourrai» → ignorance et naïveté face au lyrisme de Perdican",
       "Ironie finale : Perdican critiquait la soumission de Camille… mais instrumentalise Rosette = même violence",
     ]},
+    { text:"Le Mariage de Figaro EL4 — Les jeux du cœur et de la parole (I, 9)", points:[
+      "Beaumarchais : écrivain des Lumières ; Le Mariage de Figaro (1784) — critique de l'Ancien Régime",
+      "Contexte : dans la chambre des futurs mariés ; Chérubin caché dans le fauteuil, le comte derrière",
+      "Scène fondée sur la dissimulation, les quiproquos et les rebondissements comiques",
+      "Bazile : courtisan opportuniste, spécialiste de la médisance et de la calomnie",
+      "«Cherubino di amore» : imitation moqueuse transformant l'affection en déclaration amoureuse",
+      "Questions insidieuses de Bazile : sous-entendus sur l'amour de Chérubin pour Suzanne",
+      "Suzanne défend Chérubin : «Quelle imposture !», «méchant homme», puis «bien scélérat»",
+      "Progression de la colère de Suzanne face aux rumeurs et aux accusations",
+      "Amour supposé pour la comtesse : «il la regarde avec des yeux !» → pléonasme chargé de sous-entendus",
+      "Argument d'autorité : «tout le monde en parle» → procédé calomnieux fondé sur la rumeur",
+      "Irruption soudaine du comte : «Comment, tout le monde en parle !»",
+      "Comte jaloux de l'honneur de sa femme mais lui-même séducteur de Suzanne : hypocrisie",
+      "Suzanne refuse le fauteuil pour protéger Chérubin caché dessous",
+      "Bazile bat en retraite : ses accusations deviennent un simple «badinage»",
+      "Portrait satirique du courtisan : flatterie, opportunisme, absence de principes",
+      "Le comte veut chasser Chérubin malgré l'absence de preuves",
+      "Suzanne dénonce l'intrusion du comte dans sa chambre : défense de l'intimité féminine",
+      "Chérubin qualifié de «petit libertin» après sa découverte chez Fanchette",
+      "Réplique de Suzanne : «Où monseigneur avait sans doute affaire aussi ?» → renvoi ironique au libertinage du comte",
+      "Le comte s'amuse de l'accusation : contradiction entre sa morale et ses actes",
+      "Long récit de la découverte de Chérubin chez Fanchette",
+      "Passage du passé au présent de narration : récit plus vivant et théâtral",
+      "Théâtre dans le théâtre : le comte rejoue sa propre enquête",
+      "Geste de soulever la robe du fauteuil reproduit la scène passée et révèle Chérubin",
+      "Effet comique de répétition : le comte se fait piéger par sa propre mise en scène",
+      "Chérubin apparaît comme un double amoureux du comte, rival involontaire",
+      "Conclusion : critique d'un aristocrate hypocrite, autoritaire et jaloux dans une société inégalitaire"
+      ]},
   ],
 };
 
